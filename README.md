@@ -1,6 +1,6 @@
 #"""author = Yeming May-06-2019"""
 
-Structure of Single Sperm fastq reads:
+# Structure of Single Sperm fastq reads:
 
 
 Read 1: Sample reads.
@@ -27,10 +27,10 @@ Part or all of the 96 barcodes with known sequence are used in the library const
 
 
 
-Steps from raw reads to data visualization:
+# Steps from raw reads to data visualization: 
 
 
-Step 1. Combine lane reads
+## Step 1. Combine lane reads
 
 Combine NextSeq raw reads from 4 lane to generate Read 1 and Read 2 for each sample. This step is not demonstrated in the example.
 
@@ -38,7 +38,7 @@ In the "test_data" folder, the "test_R1.fq" and "test_R2.fq" are the first 25000
 
 
 
-Step 2. Merge Read1 and Read2
+## Step 2. Merge Read1 and Read2
 
 Merge Read 1 and Read 2. To combine the two reads file, the barcode and UMI sequence information will be preserved in the SeqID line of Read 1.
 
@@ -56,7 +56,7 @@ Here the merged read file will be generated in the folder "merged_test_fq".
 
 
 
-Step 3. Split barcode
+## Step 3. Split barcode
 
 Split individual sperm reads (split reads) out of the pool (merged reads) based on the given barcodes (96 barcodes).
 
@@ -93,7 +93,7 @@ The output files should be the same as files in the folder "test_data_results".
 
 
 
-Step 4. Alignment and count
+## Step 4. Alignment and count
 
 Perform large RNA (fragmented library) or small RNA alignment (unfragmented library) for the split sample fastq files. In the example, the individual sperm fastq files are stored in the folder "split_test_fq". Each barcode represents one individual sperm.
 
@@ -115,7 +115,7 @@ For small RNA, only keep the first 20 nt fastq sequence for the alignment. The s
 
 
 
-Step 5. Visualization
+## Step 5. Visualization
 
 The large RNA or small RNA count matrix will be processed by the single cell R workflow. Some data cleaning, quality control, and data visualization will be performed. One popular WorkFlow R workflow can be found in the following link. The workflow is well explained and updated frequently.
 
